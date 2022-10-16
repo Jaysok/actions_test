@@ -1,8 +1,11 @@
-name: Dev CD
+name: Project 1 Only
 
 on:
   push:
-    branches: "main"
+    branches: [ "main" ]
+    paths: 
+      - "project1/**"
+    
 
 env:
   PROJECT_ID: test
