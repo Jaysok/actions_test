@@ -1,0 +1,26 @@
+name: Project 4 Only
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: 
+      - "project4/**"
+    
+
+env:
+  PROJECT_ID: test
+  GITHUB_SHA: ${{ github.sha }}
+  GITHUB_REF: ${{ github.ref }}
+
+jobs:
+  project4:
+    name: Project4 Job
+    runs-on: ubuntu-latest
+    environment: test
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: list files
+        run: ls ./project4
