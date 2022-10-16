@@ -1,0 +1,20 @@
+name: Project 4 Slither
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: 
+      - "project4/**"
+    
+
+env:
+  PROJECT_ID: test
+  GITHUB_SHA: ${{ github.sha }}
+  GITHUB_REF: ${{ github.ref }}
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: crytic/slither-action@v0.2.0
