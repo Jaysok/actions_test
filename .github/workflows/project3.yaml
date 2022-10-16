@@ -13,7 +13,7 @@ env:
   GITHUB_REF: ${{ github.ref }}
 
 jobs:
-  project1:
+  project3:
     name: Project3 Job
     runs-on: ubuntu-latest
     environment: test
@@ -23,4 +23,4 @@ jobs:
         uses: actions/checkout@v2
       
       - name: list files
-        run: ls ./project2
+        run: ls ./project3
