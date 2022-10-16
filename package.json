@@ -1,0 +1,11 @@
+{
+  "name": "actions_test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Jaysok/actions_test.git",
+  "author": "Jaysok <wooljs@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "hardhat": "^2.12.0"
+  }
+}
