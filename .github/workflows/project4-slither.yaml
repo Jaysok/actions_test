@@ -20,6 +20,9 @@ jobs:
       - name: Say Hello
         run: echo "hi"
       
+      - name: Change Directory
+        run: cd project4
+        
       - name: Install Packages
         run: npm i
 
