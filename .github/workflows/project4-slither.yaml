@@ -24,7 +24,15 @@ jobs:
       - name: Install Packages
         run: npm i
 
-      - uses: crytic/slither-action@v0.2.0
+      - name: Run Slither
+        uses: crytic/slither-action@v0.2.0
+        id: slither
         with:
           target: 'project4/'
+          sarif: results.sarif
           fail-on: none
+
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: ${{ steps.slither.outputs.sarif }}
