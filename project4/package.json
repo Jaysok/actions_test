@@ -5,6 +5,7 @@
   "license": "MIT",
   "devDependencies": {
     "@ethersproject/abi": "^5.7.0",
+    "@ethersproject/bytes": "^5.7.0",
     "@ethersproject/providers": "^5.7.1",
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.4",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.6",
