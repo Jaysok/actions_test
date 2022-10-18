@@ -1,0 +1,36 @@
+name: Project 4 Slither
+
+on:
+  pull_request:
+    paths: 
+      - "projects/escrow"        
+
+env:
+  PROJECT_ID: test
+  GITHUB_SHA: ${{ github.sha }}
+  GITHUB_REF: ${{ github.ref }}
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Change Directory
+        run: cd project4
+
+      - name: Install Packages
+        run: npm i
+
+      - name: Run Slither
+        uses: crytic/slither-action@v0.2.0
+        id: slither
+        with:
+          target: 'project4/'
+          sarif: results.sarif
+          fail-on: none
+
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: ${{ steps.slither.outputs.sarif }}
