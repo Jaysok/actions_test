@@ -3,7 +3,7 @@ name: Project 4 Slither
 on:
   pull_request:
     paths: 
-      - "projects/escrow"        
+      - "project4/**.sol"
 
 env:
   PROJECT_ID: test
