@@ -1,4 +1,4 @@
-name: Project 4 Slither
+name: Project 4 Slither on PullRequest
 
 on:
   pull_request:
